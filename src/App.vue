@@ -1,28 +1,43 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <v-container fluid style="padding: 0">
+    <v-row no-gutters>
+      <v-col cols="3">
+        <side-bar />
+      </v-col>
+      <v-col cols="9">
+        <v-sheet class="pa-2">
+          <h1>Riotters assignment</h1>
+        </v-sheet>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
+import SideBar from "./components/SideBar/SideBar.vue";
 
 export default defineComponent({
   name: "App",
-  components: {
-    HelloWorld,
+  components: { SideBar },
+
+  setup() {
+    return {};
   },
 });
 </script>
 
-<style>
+<style lang="scss">
+body {
+  margin: 0;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-  padding: 1rem;
+  height: 100vh;
+}
+.v-container {
+  height: 100%;
+}
+.v-row {
+  height: 100%;
 }
 </style>
