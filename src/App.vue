@@ -29,10 +29,17 @@ export default defineComponent({
 
 <style lang="scss">
 body {
+  background-color: black;
   margin: 0;
 }
 #app {
-  height: 100vh;
+  max-height: 1000px;
+  max-width: 1440px;
+  background-color: white;
+  border-radius: 1rem;
+  position: relative;
+  left: 10%;
+  top: 10%;
 }
 .v-container {
   height: 100%;
