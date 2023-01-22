@@ -5,9 +5,7 @@
         <side-bar />
       </v-col>
       <v-col cols="9">
-        <v-sheet class="pa-2">
-          <h1>Riotters assignment</h1>
-        </v-sheet>
+        <tool-bar />
       </v-col>
     </v-row>
   </v-container>
@@ -16,10 +14,11 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import SideBar from "./components/SideBar/SideBar.vue";
+import ToolBar from "./components/ToolBar/ToolBar.vue";
 
 export default defineComponent({
   name: "App",
-  components: { SideBar },
+  components: { SideBar, ToolBar },
 
   setup() {
     return {};
@@ -37,9 +36,7 @@ body {
   max-width: 1440px;
   background-color: white;
   border-radius: 1rem;
-  position: relative;
-  left: 10%;
-  top: 10%;
+  margin: auto;
 }
 .v-container {
   height: 100%;
