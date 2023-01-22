@@ -86,6 +86,12 @@ export default defineComponent({
   &-actions {
     margin-left: 32px;
     margin-top: 72px;
+    .v-btn {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 24px;
+    }
   }
 }
 </style>

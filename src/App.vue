@@ -7,6 +7,8 @@
       <v-col cols="9">
         <tool-bar />
         <current-balance />
+        <summary-tile />
+        <tabs-tile />
       </v-col>
     </v-row>
   </v-container>
@@ -17,10 +19,12 @@ import { defineComponent } from "vue";
 import SideBar from "./components/SideBar/SideBar.vue";
 import ToolBar from "./components/ToolBar/ToolBar.vue";
 import CurrentBalance from "./components/Tiles/CurrentBalance.vue";
+import SummaryTile from "./components/Tiles/SummaryTile.vue";
+import TabsTile from "./components/Tabs/TabsTile.vue";
 
 export default defineComponent({
   name: "App",
-  components: { SideBar, ToolBar, CurrentBalance },
+  components: { SideBar, ToolBar, CurrentBalance, SummaryTile, TabsTile },
 
   setup() {
     return {};
