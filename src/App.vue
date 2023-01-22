@@ -6,6 +6,7 @@
       </v-col>
       <v-col cols="9">
         <tool-bar />
+        <current-balance />
       </v-col>
     </v-row>
   </v-container>
@@ -15,10 +16,11 @@
 import { defineComponent } from "vue";
 import SideBar from "./components/SideBar/SideBar.vue";
 import ToolBar from "./components/ToolBar/ToolBar.vue";
+import CurrentBalance from "./components/Tiles/CurrentBalance.vue";
 
 export default defineComponent({
   name: "App",
-  components: { SideBar, ToolBar },
+  components: { SideBar, ToolBar, CurrentBalance },
 
   setup() {
     return {};
