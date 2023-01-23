@@ -1,13 +1,15 @@
 <template>
   <v-container fluid style="padding: 0">
     <v-row no-gutters>
-      <v-col cols="3">
+      <v-col cols="3" style="max-width: 260px">
         <side-bar />
       </v-col>
-      <v-col cols="9">
+      <v-col class="content" overflow cols="9">
         <tool-bar />
-        <current-balance />
-        <summary-tile />
+        <v-row class="tiles">
+          <current-balance />
+          <summary-tile />
+        </v-row>
         <tabs-tile />
       </v-col>
     </v-row>
@@ -38,16 +40,19 @@ body {
   margin: 0;
 }
 #app {
-  max-height: 1000px;
-  max-width: 1440px;
-  background-color: white;
-  border-radius: 1rem;
-  margin: auto;
+  .v-container {
+    max-width: 1440px;
+    background-color: white;
+    border-radius: 1rem;
+    margin: auto;
+    position: relative;
+    .content {
+      max-height: 1000px;
+      margin-left: 64px;
+    }
+  }
 }
-.v-container {
-  height: 100%;
-}
-.v-row {
-  height: 100%;
+.tiles {
+  justify-content: space-around;
 }
 </style>

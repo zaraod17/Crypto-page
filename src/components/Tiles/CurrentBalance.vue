@@ -14,7 +14,7 @@
       <v-btn style="color: white" variant="flat" :color="buttonColor.color"
         >Quick Invest</v-btn
       >
-      <v-btn variant="text" :color="buttonColor.color">Show Raport</v-btn>
+      <v-btn variant="text" :color="buttonColor.color"> Show Raport</v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -35,7 +35,7 @@ export default defineComponent({
 .v-card {
   border-radius: 16px;
   background-color: whitesmoke;
-  margin-left: 68px;
+  // margin-left: 68px;
   margin-top: 32px;
   :deep(&-title) {
     font-size: 20px;
@@ -91,6 +91,7 @@ export default defineComponent({
       font-weight: 600;
       font-size: 12px;
       line-height: 24px;
+      text-transform: capitalize;
     }
   }
 }

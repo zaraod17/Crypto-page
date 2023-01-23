@@ -53,41 +53,45 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-.v-card {
-  height: 100%;
-  /deep/ .v-switch {
-    margin-left: 24px;
-    margin-top: 40px;
-    color: #7445fb;
+.v-switch {
+  margin-left: 24px;
+  margin-top: 40px;
+  color: #7445fb;
 
-    .v-label {
-      font-family: sans-serif;
-      font-size: 24px;
-      line-height: 24px;
+  .v-label {
+    font-family: sans-serif;
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 600;
+    color: black;
+    opacity: 1;
+  }
+}
+
+.v-list {
+  margin-top: 63px;
+  /deep/ .v-list-item {
+    &__overlay {
+      background: white;
+    }
+    &--active {
+      background: white;
+      .v-list-item__prepend {
+        color: #7445fb !important;
+      }
+    }
+    &-title {
+      font-style: normal;
       font-weight: 600;
-      color: black;
-      opacity: 1;
+      font-size: 16px;
+      line-height: 24px;
     }
   }
-  .v-list {
-    margin-top: 63px;
-    /deep/ .v-list-item {
-      &__overlay {
-        background: white;
-      }
-      &--active {
-        background: white;
-        .v-list-item__prepend {
-          color: #7445fb !important;
-        }
-      }
-      &-title {
-        font-style: normal;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 24px;
-      }
-    }
-  }
+}
+/deep/.v-card {
+  position: absolute;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
 }
 </style>

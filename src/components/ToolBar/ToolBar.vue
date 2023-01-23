@@ -56,10 +56,10 @@ export default defineComponent({
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
   .v-text-field {
     position: relative;
     flex: 0 0 223px;
-    left: 68px;
   }
   :deep(.v-field) {
     background-color: whitesmoke;
@@ -68,7 +68,6 @@ export default defineComponent({
     display: flex;
     justify-content: space-evenly;
     width: 8rem;
-    margin-right: 68px;
 
     .v-btn {
       min-width: 0;

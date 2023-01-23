@@ -20,7 +20,7 @@ export default defineComponent({
 .v-card {
   border-radius: 16px;
   background-color: whitesmoke;
-  margin-left: 68px;
+  // margin-left: 68px;
   margin-top: 32px;
   :deep(&-title) {
     font-size: 20px;

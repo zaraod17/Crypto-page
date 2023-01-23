@@ -29,7 +29,7 @@
       prepend-avatar="http://store-images.s-microsoft.com/image/apps.22328.13888734058999682.1f139c6c-8f01-4670-a2f7-aabf06b5c851.00a4819d-178e-4ac6-b420-6a935913e85e"
     >
       <template #subtitle>
-        <p class="v-list-item-subtitle-2">Ripple</p>
+        <h5 class="v-list-item-subtitle-2">Ripple</h5>
       </template>
       <template #append> chart here </template>
     </v-list-item>
@@ -80,7 +80,8 @@ export default defineComponent({
       font-weight: 600;
       font-size: 12px;
       line-height: 14px;
-      color: black;
+      color: #0a041c;
+      opacity: 1;
     }
   }
   .list-item-user {
