@@ -11,15 +11,17 @@
     ></template>
 
     <template #text>
-      <div class="price">summary chart here</div>
+      <big-chart />
     </template>
   </v-card>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import BigChart from "../charts/BigChart.vue";
 export default defineComponent({
   name: "SummaryTile",
+  components: { BigChart },
   setup() {
     return {};
   },

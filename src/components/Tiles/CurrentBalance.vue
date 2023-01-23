@@ -29,13 +29,17 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, onBeforeMount } from "vue";
+import { fetchData } from "@/store/data_api";
 
 export default defineComponent({
   name: "CurrentBalance",
   setup() {
     const buttonColor: { color: string } = { color: "#7445FB" };
-    return { buttonColor };
+    onBeforeMount(() => {
+      fetchData();
+    });
+    return { buttonColor, fetchData };
   },
 });
 </script>
