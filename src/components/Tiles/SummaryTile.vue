@@ -1,5 +1,15 @@
 <template>
-  <v-card height="330" width="500" title="Current Balance">
+  <v-card height="330" width="500">
+    <template #title>
+      Summary
+      <v-btn
+        color="grey-lighten"
+        icon="mdi-dots-horizontal"
+        variant="text"
+        style="position: absolute; right: 20px"
+      ></v-btn
+    ></template>
+
     <template #text>
       <div class="price">summary chart here</div>
     </template>
@@ -26,6 +36,9 @@ export default defineComponent({
     font-size: 20px;
     line-height: 24px;
     margin-left: 32px;
+    width: 100%;
+    display: flex;
+    align-items: center;
   }
   :deep(&-text) {
     margin-top: 40px;

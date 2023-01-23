@@ -1,5 +1,14 @@
 <template>
-  <v-card height="330" width="500" title="Current Balance">
+  <v-card height="330" width="500">
+    <template #title>
+      Current Balance
+      <v-btn
+        color="grey-lighten"
+        icon="mdi-dots-horizontal"
+        variant="text"
+        style="position: absolute; right: 20px"
+      ></v-btn
+    ></template>
     <template #text>
       <div class="price">
         <h2>$</h2>
@@ -41,6 +50,8 @@ export default defineComponent({
     font-size: 20px;
     line-height: 24px;
     margin-left: 32px;
+    display: flex;
+    align-items: center;
   }
   :deep(&-text) {
     margin-top: 40px;
