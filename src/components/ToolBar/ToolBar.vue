@@ -35,16 +35,10 @@
 import { defineComponent } from "vue";
 export default defineComponent({
   name: "ToolBar",
-  data: () => ({
-    items: [
-      { title: "Click Me" },
-      { title: "Click Me" },
-      { title: "Click Me" },
-      { title: "Click Me 2" },
-    ],
-  }),
+
   setup() {
-    return {};
+    const items = [{ title: "Tu" }, { title: "jest" }, { title: "dropdown" }];
+    return { items };
   },
 });
 </script>

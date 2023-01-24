@@ -53,6 +53,8 @@ export default defineComponent({
   // margin-left: 68px;
   margin-top: 32px;
   :deep(&-title) {
+    font-family: "SF Pro Display";
+    font-weight: 500;
     font-size: 20px;
     line-height: 24px;
     margin-left: 32px;
@@ -109,6 +111,7 @@ export default defineComponent({
       font-size: 12px;
       line-height: 24px;
       text-transform: capitalize;
+      font-family: "SF Pro Display";
     }
   }
 }

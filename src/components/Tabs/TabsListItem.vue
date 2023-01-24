@@ -24,7 +24,7 @@
       </div>
       <div class="content-4">Chart</div>
       <div class="list-actions">
-        <v-btn variant="text" :color="buttonColor.color">Sell</v-btn>
+        <v-btn variant="outlined" :color="buttonColor.color">Sell</v-btn>
         <v-btn style="color: white" variant="flat" :color="buttonColor.color"
           >Buy</v-btn
         >
@@ -97,7 +97,9 @@ export default defineComponent({
   }
   .list-actions {
     .v-btn {
+      margin-right: 5px;
       text-transform: capitalize;
+      font-family: "SF Pro Display";
     }
   }
 }
@@ -117,6 +119,7 @@ export default defineComponent({
     color: #9896a1;
   }
   :deep(&-subtitle) {
+    font-family: "SF Pro Display";
     font-style: normal;
     font-weight: 600;
     font-size: 14px;

@@ -1,6 +1,6 @@
 <template>
   <v-card style="background-color: whitesmoke">
-    <v-switch inset :model-value="true" label="Payte"> </v-switch>
+    <v-switch :model-value="true" label="Payte" density="compact"> </v-switch>
     <v-list style="background-color: whitesmoke" density="compact" nav>
       <v-list-item
         v-for="item in itemsList"
@@ -56,10 +56,12 @@ export default defineComponent({
 .v-switch {
   margin-left: 24px;
   margin-top: 40px;
-  color: #7445fb;
+  color: #4592fb;
+  :deep(&__thumb) {
+    color: #7445fb !important;
+  }
 
-  .v-label {
-    font-family: sans-serif;
+  :deep(.v-label) {
     font-size: 24px;
     line-height: 24px;
     font-weight: 600;
@@ -81,6 +83,7 @@ export default defineComponent({
       }
     }
     &-title {
+      font-family: "SF Pro Display";
       font-style: normal;
       font-weight: 600;
       font-size: 16px;

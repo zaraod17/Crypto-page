@@ -74,6 +74,9 @@ export default defineComponent({
       line-height: 14px;
       color: #9896a1;
     }
+    &-subtitle {
+      opacity: 1;
+    }
     &-subtitle-2 {
       font-family: "SF Pro Display";
       font-style: normal;

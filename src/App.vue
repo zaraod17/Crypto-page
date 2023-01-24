@@ -11,13 +11,13 @@
             <current-balance />
           </v-col>
           <v-col v-if="!isSmallScreen" cols="12" sm="6">
-            <summary-tile class="summary" />
+            <summary-tile />
           </v-col>
           <v-col cols="12">
             <tabs-tile />
           </v-col>
           <v-col v-if="isSmallScreen" cols="12">
-            <summary-tile class="summary" />
+            <summary-tile />
           </v-col>
         </v-row>
       </v-col>

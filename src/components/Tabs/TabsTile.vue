@@ -53,19 +53,16 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref } from "vue";
 import TabsListItem from "./TabsListItem.vue";
 export default defineComponent({
   components: { TabsListItem },
-  data() {
-    return {
-      tab: null,
-      sliderColor: "#7445FB",
-    };
-  },
+
   name: "TabsTile",
   setup() {
-    return {};
+    const tab = ref(null);
+    const sliderColor = "#7445FB";
+    return { tab, sliderColor };
   },
 });
 </script>
