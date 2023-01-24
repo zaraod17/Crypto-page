@@ -40,6 +40,7 @@ export default defineComponent({
 
   setup() {
     const screenWidth = ref<number>(window.screen.width);
+    const data = ref();
 
     const updateScreenWidth = () => (screenWidth.value = window.screen.width);
 
@@ -58,7 +59,7 @@ export default defineComponent({
     onBeforeMount(() => {
       fetchData();
     });
-    return { isSmallScreen };
+    return { isSmallScreen, data };
   },
 });
 </script>
