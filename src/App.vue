@@ -26,12 +26,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, computed, onMounted } from "vue";
+import { defineComponent, ref, computed, onMounted, onBeforeMount } from "vue";
 import SideBar from "./components/SideBar/SideBar.vue";
 import ToolBar from "./components/ToolBar/ToolBar.vue";
 import CurrentBalance from "./components/Tiles/CurrentBalance.vue";
 import SummaryTile from "./components/Tiles/SummaryTile.vue";
 import TabsTile from "./components/Tabs/TabsTile.vue";
+import { fetchData } from "@/store/data_api";
 
 export default defineComponent({
   name: "App",
@@ -52,6 +53,10 @@ export default defineComponent({
       } else {
         return false;
       }
+    });
+
+    onBeforeMount(() => {
+      fetchData();
     });
     return { isSmallScreen };
   },
