@@ -26,7 +26,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, computed, watch, onMounted } from "vue";
+import { defineComponent, ref, computed, onMounted } from "vue";
 import SideBar from "./components/SideBar/SideBar.vue";
 import ToolBar from "./components/ToolBar/ToolBar.vue";
 import CurrentBalance from "./components/Tiles/CurrentBalance.vue";
@@ -38,7 +38,7 @@ export default defineComponent({
   components: { SideBar, ToolBar, CurrentBalance, SummaryTile, TabsTile },
 
   setup() {
-    const screenWidth = ref<number>(0);
+    const screenWidth = ref<number>(window.screen.width);
 
     const updateScreenWidth = () => (screenWidth.value = window.screen.width);
 

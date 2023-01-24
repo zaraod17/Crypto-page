@@ -1,20 +1,26 @@
 <template>
-  <v-list-item
-    variant="text"
-    prepend-avatar="https://bitcoin.org/img/icons/opengraph.png?1674137323"
-  >
+  <v-list-item variant="text" :prepend-avatar="data.avatar">
     <v-list-item-content class="list-content">
       <div class="content-1">
-        <v-list-item-title>BTC</v-list-item-title
-        ><v-list-item-subtitle> <h4>Bitcoin</h4></v-list-item-subtitle>
+        <v-list-item-title>{{ data.title }}</v-list-item-title
+        ><v-list-item-subtitle style="width: 70px">
+          <h4>{{ data.subtitle }}</h4></v-list-item-subtitle
+        >
       </div>
       <div class="content-2">
         <v-list-item-title>Price</v-list-item-title
-        ><v-list-item-subtitle> <h4>2312</h4></v-list-item-subtitle>
+        ><v-list-item-subtitle style="width: 70px">
+          <h4>{{ data.price }}</h4></v-list-item-subtitle
+        >
       </div>
       <div class="content-3">
-        <v-list-item-title>Change</v-list-item-title
-        ><v-list-item-subtitle> <p>2312</p></v-list-item-subtitle>
+        <v-list-item-title>Change</v-list-item-title>
+        <v-list-item-subtitle v-if="data.isGrowing">
+          <p>{{ data.change }} <v-icon>mdi-arrow-right-circle</v-icon></p>
+        </v-list-item-subtitle>
+        <v-list-item-subtitle class="down" v-else>
+          <p>{{ data.change }} <v-icon>mdi-arrow-right-circle</v-icon></p>
+        </v-list-item-subtitle>
       </div>
       <div class="content-4">Chart</div>
       <div class="list-actions">
@@ -28,12 +34,29 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, reactive } from "vue";
 
 export default defineComponent({
-  setup() {
+  props: {
+    avatar: String,
+    title: String,
+    subtitle: String,
+    price: String,
+    change: String,
+    isGrowing: Boolean,
+  },
+  setup(props) {
     const buttonColor: { color: string } = { color: "#7445FB" };
-    return { buttonColor };
+    const data = reactive({
+      avatar: props.avatar,
+      title: props.title,
+      subtitle: props.subtitle,
+      price: props.price,
+      change: props.change,
+      isGrowing: props.isGrowing,
+    });
+
+    return { buttonColor, data };
   },
 });
 </script>
@@ -45,13 +68,29 @@ export default defineComponent({
 .list-content {
   display: flex;
   justify-content: space-between;
-  &-1 {
-    display: block;
+  .content {
+    &-1,
+    &-2,
+    &-3 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .down {
+        p {
+          color: #ea4d4d;
+        }
+        .v-icon {
+          color: #ea4d4d;
+          transform: rotate(45deg);
+          margin-right: 8px;
+        }
+      }
+    }
   }
   .v-icon {
     transform: rotate(-45deg);
-    color: #2dc78f;
     margin-right: 8px;
+    color: #2dc78f;
   }
   p {
     color: #2dc78f;

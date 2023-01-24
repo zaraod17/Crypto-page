@@ -17,9 +17,30 @@
       <v-window v-model="tab">
         <v-window-item value="one">
           <v-list bg-color="#F5F5F5">
-            <tabs-list-item />
-            <tabs-list-item />
-            <tabs-list-item />
+            <tabs-list-item
+              avatar="https://bitcoin.org/img/icons/opengraph.png?1674137323"
+              title="BTC"
+              subtitle="Bitcoin"
+              price="$29,982.96"
+              change="2.15"
+              :is-growing="true"
+            />
+            <tabs-list-item
+              avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsJjcUPNCDaQYUFy42i2JUM75yRNT8BShJ_gUgSd60EkqYZ4ZWLbzM1EK4g-SDlXlN-wc&usqp=CAU"
+              title="ETH"
+              subtitle="Ethereum"
+              price="$1,816.61"
+              change="2.11"
+              :is-growing="false"
+            />
+            <tabs-list-item
+              avatar="https://s3.coinmarketcap.com/static-gravity/image/4aec70f6f1254e4f89650cc68ae49f3c.png"
+              title="ADA"
+              subtitle="Cardano"
+              price="$0.57"
+              change="2.47"
+              :is-growing="true"
+            />
           </v-list>
         </v-window-item>
         <v-window-item value="two"> Two </v-window-item>
