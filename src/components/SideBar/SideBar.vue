@@ -72,7 +72,7 @@ export default defineComponent({
 
 .v-list {
   margin-top: 63px;
-  /deep/ .v-list-item {
+  :deep(.v-list-item) {
     &__overlay {
       background: white;
     }
@@ -91,7 +91,7 @@ export default defineComponent({
     }
   }
 }
-/deep/.v-card {
+:deep(.v-card) {
   position: absolute;
   height: 100%;
   object-fit: cover;
