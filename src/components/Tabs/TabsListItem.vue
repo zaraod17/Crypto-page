@@ -1,6 +1,5 @@
 <template>
   <v-list-item
-    class="v-list-item-title-2"
     variant="text"
     prepend-avatar="https://bitcoin.org/img/icons/opengraph.png?1674137323"
   >
@@ -40,6 +39,9 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
+.v-list-item {
+  min-width: 450px;
+}
 .list-content {
   display: flex;
   justify-content: space-between;

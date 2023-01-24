@@ -1,5 +1,5 @@
 <template>
-  <v-card height="330" width="500">
+  <v-card>
     <template #title>
       Summary
       <v-btn
@@ -30,6 +30,8 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .v-card {
+  min-height: 330px;
+  max-width: 500px;
   border-radius: 16px;
   background-color: whitesmoke;
   // margin-left: 68px;

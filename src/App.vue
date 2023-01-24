@@ -1,23 +1,32 @@
 <template>
   <v-container fluid style="padding: 0">
     <v-row no-gutters>
-      <v-col cols="3" style="max-width: 260px">
+      <v-col class="sidebar" cols="12" lg="3">
         <side-bar />
       </v-col>
       <v-col class="content" overflow cols="9">
         <tool-bar />
         <v-row class="tiles">
-          <current-balance />
-          <summary-tile />
+          <v-col cols="12" sm="6">
+            <current-balance />
+          </v-col>
+          <v-col v-if="!isSmallScreen" cols="12" sm="6">
+            <summary-tile class="summary" />
+          </v-col>
+          <v-col cols="12">
+            <tabs-tile />
+          </v-col>
+          <v-col v-if="isSmallScreen" cols="12">
+            <summary-tile class="summary" />
+          </v-col>
         </v-row>
-        <tabs-tile />
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent, ref, computed, watch, onMounted } from "vue";
 import SideBar from "./components/SideBar/SideBar.vue";
 import ToolBar from "./components/ToolBar/ToolBar.vue";
 import CurrentBalance from "./components/Tiles/CurrentBalance.vue";
@@ -29,7 +38,22 @@ export default defineComponent({
   components: { SideBar, ToolBar, CurrentBalance, SummaryTile, TabsTile },
 
   setup() {
-    return {};
+    const screenWidth = ref<number>(0);
+
+    const updateScreenWidth = () => (screenWidth.value = window.screen.width);
+
+    onMounted(() => {
+      window.addEventListener("resize", updateScreenWidth);
+    });
+
+    const isSmallScreen = computed<boolean>(() => {
+      if (screenWidth.value < 600) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+    return { isSmallScreen };
   },
 });
 </script>
@@ -47,12 +71,18 @@ body {
     margin: auto;
     position: relative;
     .content {
-      max-height: 1000px;
+      // max-height: 1000px;
       margin-left: 64px;
     }
   }
 }
 .tiles {
   justify-content: space-around;
+}
+
+@media only screen and (min-width: 1264px) {
+  .sidebar {
+    max-width: 260px !important;
+  }
 }
 </style>
