@@ -1,4 +1,4 @@
-# riotters-assignment
+# Crypto page
 
 ## Project setup
 ```
