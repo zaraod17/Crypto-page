@@ -1,5 +1,7 @@
 # Crypto page
 
+https://sparkling-kelpie-10c2ac.netlify.app/
+
 ## Project setup
 ```
 npm install
